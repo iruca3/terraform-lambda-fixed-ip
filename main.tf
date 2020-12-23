@@ -6,7 +6,7 @@ provider "aws" {
 //// VPC
 resource "aws_vpc" "lambdas" {
     cidr_block = "${var.vpc_cidr}"
-    tags {
+    tags = {
         Name = "${var.vpc_name}"
     }
 }
@@ -16,7 +16,7 @@ resource "aws_vpc" "lambdas" {
 resource "aws_subnet" "lambdas-private" {
     cidr_block = "${var.private_subnet_cidr}"
     vpc_id = "${aws_vpc.lambdas.id}"
-    tags {
+    tags = {
         Name = "${var.private_subnet_name}"
     }
 }
@@ -24,7 +24,7 @@ resource "aws_subnet" "lambdas-private" {
 resource "aws_subnet" "lambdas-public" {
     cidr_block = "${var.public_subnet_cidr}"
     vpc_id = "${aws_vpc.lambdas.id}"
-    tags {
+    tags = {
         Name = "${var.public_subnet_name}"
     }
 }
