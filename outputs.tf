@@ -9,3 +9,7 @@ output "private_subnet_id" {
 output "eip_id" {
     value = "${aws_eip.lambdas.id}"
 }
+
+output "security_group_id" {
+    value = aws_vpc.lambdas.default_security_group_id
+}
