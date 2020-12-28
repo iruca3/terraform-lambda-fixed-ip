@@ -13,3 +13,7 @@ output "eip_id" {
 output "security_group_id" {
   value = aws_vpc.lambdas.default_security_group_id
 }
+
+output "route_table_id" {
+  value = aws_route_table.lambdas-private.id
+}
